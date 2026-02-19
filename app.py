@@ -31,7 +31,8 @@ if prompt := st.chat_input("আপনি কী জানতে চান?"):
     # AI এর উত্তর জেনারেট করা
     with st.chat_message("assistant"):
         response = client.chat.completions.create(
-            model="grok-beta", # অথবা আপনার কেনা মডেলের নাম
+            model="grok-2",
+             # অথবা আপনার কেনা মডেলের নাম
             messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
         )
         full_response = response.choices[0].message.content
